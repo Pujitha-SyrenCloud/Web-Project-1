@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="Registerform.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Syren Cloud</h1>
+    </div>
+    <div class="box">
+    <div class="container">
+        <h1>Registration Form</h1>
+        <br><br>
+        <form id="myForm">
+            <div class="input-box1">
+                <input type="text" id="Name" name="first" placeholder="Full Name" required><br><br>    
+                
+                <input type="text" id="email" name="email" placeholder="Email" required><br><br>
+    
+                <input type="password" id="Password" name="Password" placeholder="Password"  required><br><br>
+
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder=" Confirm Password" required>
+    
+                <button type="Submit" onclick="save_func()">Submit</button></div> 
+                <br>
+                
+        <p class="main">Want to login? <a href="login1.html">Click here</a></p>
+        </form>
+    </div>
+    <script>
+        function save_func(){
+            var first=document.getElementById("Name").value;
+            var second=document.getElementById("email").value;
+            var third=document.getElementById("Password").value;
+            var fourth=document.getElementById("confirmPassword").value;
+            var data=[];
+            data.push(first);
+            data.push(second);
+            data.push(third);
+            data.push(fourth);
+            var data_string=JSON.stringify(data);
+            var file =new Blob([data_string],{type:"text"});
+            alert("Data Stored Sucessfully")
+            var anchor=document.createElement("a");
+            anchor.href=URL.createObjectURL(file);
+            anchor.download="save.txt";
+            anchor.click();
+             
+       
+        }
+        </script>
+    </div> 
+    <div class="footer">
+        <p>All rights are reserved</p>
+      </div>  
+
+    
+
+    
+</body>
+</html>

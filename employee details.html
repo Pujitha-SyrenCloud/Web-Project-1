@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+    <link rel="stylesheet" href="employeestyles.css">
+    
+</head>
+<body>
+    <div class="header">
+        <h1>Syren Cloud</h1>
+    </div>
+
+    <h1>Employee Details</h1>
+
+    <!-- Table to display employee details -->
+    <div id="employeeTableContainer"></div>
+
+    <script>
+        // Function to generate employee details table
+        function showEmployeeDetails() {
+            // Array to store employee data
+            const employees = [];
+
+            // Generate 100 employee entries
+            for (let i = 1; i <= 100; i++) {
+                employees.push({
+                    Empid: i,
+                    name: `Employee ${i}`,
+                    position: `Position ${i}`,
+                    contactNumber: `+123-456-789${i%10}`,
+                    salary: `$${(i * 100)}`
+                });
+            }
+
+            // Start building the table HTML
+            let tableHTML = '<table>';
+            tableHTML += '<tr><th>EmpID</th><th>Name</th><th>Position</th><th>Contact Number</th><th>Salary</th></tr>';
+
+            // Loop through each employee and add a row for each one//template literal//
+            employees.forEach(employee => {
+                tableHTML += `<tr>
+                                <td>${employee.Empid}</td>
+                                <td>${employee.name}</td>
+                                <td>${employee.position}</td>
+                                <td>${employee.contactNumber}</td>
+                                <td>${employee.salary}</td>
+                              </tr>`;
+            });
+
+            tableHTML += '</table>';
+
+            // Insert the generated table into the HTML container
+            document.getElementById('employeeTableContainer').innerHTML = tableHTML;
+        }
+
+        // Call the function as soon as the page loads
+        window.onload = showEmployeeDetails();
+    </script>
+    <div class="footer">
+        <p>All rights are reserved</p>
+      </div> 
+
+</body>
+</html>

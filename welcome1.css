@@ -1,0 +1,90 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color:lightcoral;
+    color: #333;
+    line-height: 1.6;
+    padding-top: 60px; /* Space for fixed header */
+}
+
+/* Header Styles */
+.header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.container h1{
+    text-align: center;
+    padding-top: 15px;
+}
+
+.header h1 {
+    font-size: 2rem;
+    margin: 0px;
+    padding-left: 500px;
+
+}
+
+
+/* Footer Styles */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer p {
+    font-size: 1rem;
+}
+
+/* Responsive Styles 
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+}
+*/
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.2rem;
+    }
+
+    .footer p {
+        font-size: 0.9rem;
+    }
+}
+/*button styles */
+.menu-button{
+    font-size: 16px;
+    padding: 14px 40px;
+    /*margin-top: 90px;
+    margin-right:120px ;
+    margin-bottom: 90px;
+    margin-left:500px*/
+    margin:90px 120px 90px 530px;
+    
+
+}
